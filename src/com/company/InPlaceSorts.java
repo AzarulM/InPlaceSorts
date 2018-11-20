@@ -4,6 +4,26 @@ import java.util.Arrays;
 
 public class InPlaceSorts {
 
+    public static void swapInt(int[] arr, int i, int j)
+    {
+        int temp = arr[i];
+                  arr[i] = arr[j];
+                  arr[j] = temp;
+    }
+    public static void swapDouble(double[] arr, int i, int j)
+    {
+        double temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    public static void swapString(String[] arr, int i, int j)
+    {
+        String temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+
     public static void insertionSort(int[] list1)
     {
         for (int i = 0; i < list1.length; i ++)
@@ -21,14 +41,38 @@ public class InPlaceSorts {
     }
     public static void selectionSort(double[] list1)
     {
-        
+        for(int i = 0; i < list1.length - 1; i++)
+        {
+            int min = i;
+            for(int j = i + 1; j<list1.length; j++)
+            {
+                if(list1[j] < list1[min])
+                {
+                    min = j;
+                }
+            }
+            if(min != i)
+            {
+                swapDouble(list1, i, min);
+            }
+
+        }
     }
+
     public static void bubbleSort(String[] list1)
     {
-
+        for (int i = 0; i < list1.length; i++)
+        {
+            for (int j = 0; j < list1.length - i - 1; j++) {
+                if (list1[j].compareTo(list1[j+1]) > 0) {
+                    swapString(list1, j, j + 1);
+                }
+            }
+        }
     }
 
-    public String[] randomStringArr(int num, int length)
+
+    public static String[] randomStringArr(int num, int length)
     {
         String [] arr = new String [num];
         while (num > 0)
@@ -43,6 +87,26 @@ public class InPlaceSorts {
             }
             num --;
             arr[num] = s;
+        }
+        return arr;
+    }
+
+    public static int[] randIntArr(int count)
+    {
+        int[] arr = new int[count];
+        for(int i = 0; i < arr.length; i++)
+        {
+            arr[i] = (int)(Math.random()*10000);
+        }
+        return arr;
+    }
+
+    public static double[] randDoubleArr(int count)
+    {
+        double[] arr = new double[count];
+        for(int i = 0; i < arr.length; i++)
+        {
+            arr[i] = Math.random()*10000.0;
         }
         return arr;
     }

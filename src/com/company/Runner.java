@@ -5,14 +5,14 @@ import java.util.Arrays;
 public class Runner {
     public static void main(String[] args) {
     long time = System.currentTimeMillis();
-    int[] arr = InPlaceSorts.randIntArr(50000);
+    int[] arr = InPlaceSorts.randIntArr(9000);
     System.out.println(Arrays.toString(arr) + "\n Processing...");
     InPlaceSorts.insertionSort(arr);
     System.out.println(Arrays.toString(arr) + "\n Done");
     time = System.currentTimeMillis() - time;
     System.out.println("Time taken: " + time * 0.001 + " seconds");
     System.out.println("---------------");
-    double[] arrDouble = InPlaceSorts.randDoubleArr(50000);
+    double[] arrDouble = InPlaceSorts.randDoubleArr(9000);
     time = System.currentTimeMillis();
     System.out.println(Arrays.toString(arrDouble) + "\n Processing...");
     InPlaceSorts.selectionSort(arrDouble);
@@ -20,7 +20,7 @@ public class Runner {
     time = System.currentTimeMillis() - time;
     System.out.println("Time taken: " + time * 0.001 + " seconds");
     System.out.println("---------------");
-    String[] arrString = InPlaceSorts.randomStringArr(50000, 4);
+    String[] arrString = InPlaceSorts.randomStringArr(9000, 4);
     time = System.currentTimeMillis();
     System.out.println(Arrays.toString(arrString) + "\n Processing...");
     InPlaceSorts.bubbleSort(arrString);
@@ -29,4 +29,3 @@ public class Runner {
     System.out.println("Time taken: " + time * 0.001 + " seconds");
     }
 }
-

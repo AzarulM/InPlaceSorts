@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
-
 public class InPlaceSorts {
 
     public static void swapInt(int[] arr, int i, int j)
@@ -109,5 +107,27 @@ public class InPlaceSorts {
             arr[i] = Math.random()*10000.0;
         }
         return arr;
+    }
+
+    public void mergeSort (int[] arr)
+    {
+        int n = arr.length;
+        int [] temp = new int[n];
+        mergeSortHelper(arr,0,n-1,temp);
+    }
+
+    public void mergeSortHelper(int[] arr, int left, int right, int[] temp)
+    {
+        if (left < right)
+        {
+            int mid = (left + right) / 2;
+            mergeSortHelper(arr, left, mid, temp);
+            mergeSortHelper(arr, mid + 1, right, temp);
+        }
+    }
+
+    public void merge(int[] arr, int left, int mid, int right, int[] temp)
+    {
+        
     }
 }

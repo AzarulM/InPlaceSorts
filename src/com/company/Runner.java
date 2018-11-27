@@ -31,5 +31,11 @@ public class Runner {
     System.out.println(Arrays.toString(mergeArr) + "\n Processing...");
     InPlaceSorts.mergeSort(mergeArr);
     System.out.println(Arrays.toString(mergeArr) + "\n Done");
+    System.out.println("Time taken: " + time * 0.001 + " seconds");
+    int[] quickArr = InPlaceSorts.partition(arr, 0 ,0);
+    System.out.println((Arrays.toString(quickArr)) + "\n Processing...");
+    InPlaceSorts.quicksort(arr, 0 , arr.length - 1);
+    System.out.println((quickArr) + "\n Done");
+    System.out.println("Time taken: " + time * 0.001 + " seconds");
     }
 }
